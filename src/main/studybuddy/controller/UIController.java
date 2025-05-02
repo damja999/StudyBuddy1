@@ -1,13 +1,23 @@
-public class MainApp extends Application {
-    @Override
-    public void start(Stage primaryStage) {
-        UIController controller = new UIController();
-        primaryStage.setTitle("StudyForge – Study Guide Builder");
-        primaryStage.setScene(new Scene(controller.getMainLayout(), 800, 600));
-        primaryStage.show();
+package studyforge.controller;
+
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+
+/**
+ * Controller for building the basic JavaFX interface layout.
+ */
+public class UIController {
+    private VBox layout;
+
+    public UIController() {
+        layout = new VBox(10);
+        Label welcome = new Label("Welcome to StudyForge – Build Your Study Guide");
+        layout.getChildren().add(welcome);
+
+        // Future: add buttons, lists, input forms
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    public VBox getMainLayout() {
+        return layout;
     }
 }
